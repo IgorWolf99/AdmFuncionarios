@@ -2,6 +2,8 @@ package Aplication;
 
 import java.util.Scanner;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 import entities.Funcionario;
 
 public class Programa {
@@ -10,6 +12,7 @@ public class Programa {
 		Scanner sc = new Scanner(System.in);
 
 // Cadastro Usuário
+		System.out.println("--- Cadastro de Usuário ---");
 		System.out.print("Nome: ");
 		String nome = sc.next();
 		System.out.print("Sobrenome: ");
@@ -18,7 +21,7 @@ public class Programa {
 		int idade = sc.nextInt();
 		System.out.print("Sexo: ");
 		char sexo = sc.next().toUpperCase().charAt(0);
-		
+	
 		Funcionario func = new Funcionario(nome, sobrenome, idade, sexo);
 		
 		System.out.println("\nSetores"
@@ -27,18 +30,17 @@ public class Programa {
 				+ "\n3 - Compras"
 				+ "\n4 - Vendas"
 				+ "\n5 - Almoxarifado");
-		
+
 		System.out.print("Defina o Setor: ");
 		int set = sc.nextInt();
 		func.setSetor(set);
-		
-		
+
+		func.mudarInfo();
 		
 		
 // ------------------------------------------------------------------		
 		System.out.println(func.info());
 
-		
 		
 		
 	}
